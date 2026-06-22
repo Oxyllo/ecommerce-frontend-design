@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display Layout | EliteCommerce</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER BLOCK -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">Elite<span>Shop</span></a></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                    <li><a href="#" class="nav-link">About Us</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="headerSearch" placeholder="Search interactive mock...">
+            </div>
+        </div>
+    </header>
+
+    <!-- WEEK 3 DETAILS PANELS -->
+    <main class="container">
+        <div class="details-wrapper">
+            <div class="gallery-container">
+                <img src="assets/interior/6.png" alt="Nordic Accent Chair Profile Grid">
+            </div>
+            
+            <div class="details-content">
+                <h1>Nordic Matte Accent Chair</h1>
+                <div class="details-price">$249.00</div>
+                <p class="details-desc">
+                    Engineered using sustainably sourced ash wood frames layered with micro-weave structural foam padding. Provides dynamic posture alignment built beautifully for multi-hour architectural workspace conditions.
+                </p>
+
+                <!-- Dynamic Size Dropdown Menu Requirement -->
+                <div class="selector-group">
+                    <label for="productSize">Select Model Variant</label>
+                    <select id="productSize" class="custom-select">
+                        <option value="standard">Standard Studio Edition</option>
+                        <option value="lounge">Executive Lounge Wide</option>
+                        <option value="compact">Compact Space Edition</option>
+                    </select>
+                </div>
+
+                <div class="action-row">
+                    <input type="number" class="quantity-input" value="1" min="1">
+                    <button class="btn" id="addToCartBtn">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Metadata Block -->
+        <section class="reviews-section">
+            <h2 style="margin-bottom: 30px;">Customer Reviews</h2>
+            <div class="review-card">
+                <div class="review-meta">
+                    <span>Arsalan Ahmed</span>
+                    <span class="review-stars">★★★★★</span>
+                </div>
+                <p>Clean alignment, incredible build structure. Fits my office footprint beautifully.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER BLOCK -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 EliteShop. Intern Submission Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT CONTROL BLOCK -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add To Cart Button Interactive Response
+            const cartButton = document.getElementById('addToCartBtn');
+            const sizeSelector = document.getElementById('productSize');
+
+            cartButton.addEventListener('click', () => {
+                const selectedVariant = sizeSelector.options[sizeSelector.selectedIndex].text;
+                alert(`Success! Item added to cart.\nVariant Configuration: ${selectedVariant}`);
+            });
+
+            // Styled Non-Functional Header Input Log Test
+            const searchField = document.getElementById('headerSearch');
+            searchField.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    alert(`Search functionality triggered for term: "${searchField.value}"\n(This is a styled mock input layout)`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
